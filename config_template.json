@@ -1,0 +1,7 @@
+{
+    "sender": "XXX@xx.com",
+    "receiver": "XXX@xx.com",
+    "smtp_server": "smtp.1xx.com",
+    "smtp_user": "xxx",
+    "smtp_pass": "xxx"
+}
