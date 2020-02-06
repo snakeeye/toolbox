@@ -3,6 +3,7 @@
 
 import socket 
 import smtplib
+import subprocess
 from email.message import EmailMessage
 from email.header import Header
 from email.mime.text import MIMEText
@@ -25,7 +26,8 @@ def sendIpAddress(host, ip):
 
         print(sender + receiver + mail_host + mail_user + mail_pass)
 
-        content = 'rt'
+        result = subprocess.run(['ifconfig'], stdout=subprocess.PIPE)
+        content = result.stdout
         title = "Host:" + host + " ip:" + ip
         message = MIMEText(content, 'plain', 'utf-8')
         message['From'] = "{}".format(sender)
